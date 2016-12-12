@@ -1,4 +1,4 @@
 <?php
 
-define('SOCIAL_MEDIA_DIR', basename(dirname(__FILE__)));
-Object::add_extension('SiteConfig', 'SocialMediaExtension');
+define('INSITEAPPS_SOCIAL_MEDIA_DIR', basename(dirname(__FILE__)));
+

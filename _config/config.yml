@@ -1,0 +1,14 @@
+---
+Name: insite
+After:
+  - 'framework/*'
+  - 'cms/*'
+---
+
+SiteConfig:
+  extensions:
+    - SocialMediaExtension
+
+Page_Controller:
+  extensions:
+    - SocialMediaPageExtension
