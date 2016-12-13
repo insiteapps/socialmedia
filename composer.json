@@ -3,7 +3,8 @@
   "description": "Silverstripe Insite Apps (south africa) socialmedia plugin",
   "type": "silverstripe-module",
   "keywords": [
-    "insite"
+    "insite",
+    "socialmedia"
   ],
   "license": "BSD-3-Clause",
   "authors": [

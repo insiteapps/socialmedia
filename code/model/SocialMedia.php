@@ -44,11 +44,13 @@ class SocialMedia extends DataObject
             "Twitter",
             "RSS",
             "Youtube",
+            'Vimeo',
             "LinkedIn",
             "Flickr",
             "Google-Plus",
             "TripAdvisor",
             'Pinterest',
+            'Flickr',
         );
         $aNames =[];
         /**/
