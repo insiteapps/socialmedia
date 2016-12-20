@@ -8,7 +8,12 @@ After:
 SiteConfig:
   extensions:
     - SocialMediaExtension
+    - SocialMediaSiteConfigExtension
+
+Page:
+  extensions:
+    - SocialMediaPageExtension
 
 Page_Controller:
   extensions:
-    - SocialMediaPageExtension
+    - SocialMediaPageControllerExtension
