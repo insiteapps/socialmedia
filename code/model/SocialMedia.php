@@ -16,17 +16,17 @@ class SocialMedia extends DataObject
     );
     private static $has_one = array(
         "SiteConfig" => "SiteConfig",
-        'Page' => 'Page',
+        "Page" => "Page",
         //"Icon" => "Image",
     );
 
     public function getCMSFields()
     {
         $f = parent::getCMSFields();
-        $f->removeByName(array("SortOrder","SiteConfigID"));
+        $f->removeByName(array("SortOrder", "SiteConfigID", "PageID"));
         $f->addFieldToTab("Root.Main", DropdownField::create("Name")
             ->setSource(self::availableNames())
-            ->setEmptyString("----"),"Link");
+            ->setEmptyString("----"), "Link");
 
         $icon = UploadField::create("Icon");
         $icon->setAllowedFileCategories('image');
@@ -53,7 +53,7 @@ class SocialMedia extends DataObject
             'Pinterest',
             'Flickr',
         );
-        $aNames =[];
+        $aNames = [];
         /**/
         $usedNames = [];//SocialMedia::get()->column("Name");
         $field_names = array_diff($names, $usedNames);
@@ -64,6 +64,12 @@ class SocialMedia extends DataObject
 
         return $aNames;
     }
+
+    private static $summary_fields = array(
+        'Name',
+        'Link',
+
+    );
 
     function onBeforeWrite()
     {

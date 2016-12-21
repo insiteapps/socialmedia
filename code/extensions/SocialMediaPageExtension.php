@@ -20,9 +20,9 @@ class SocialMediaPageControllerExtension extends DataExtension
         Requirements::css(INSITEAPPS_SOCIAL_MEDIA_DIR . "/css/SocialMedia.css");
     }
 
-    function SocialMedia_()
+    function getSocialMedia()
     {
-        return SocialMedia::get();
+        return $this->SocialMedia();
     }
 
     function SiteSocialMedia()

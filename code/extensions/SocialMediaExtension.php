@@ -14,7 +14,7 @@ class SocialMediaExtension extends DataExtension
 
         $gridFieldConfig = GridFieldConfig_RecordEditor::create();
         $gridFieldConfig->addComponent(new GridFieldSortableRows('SortOrder'));
-        $gridfield = new GridField('SocialMedia', 'SocialMedia', SocialMedia::get(), $gridFieldConfig);
+        $gridfield = new GridField('SocialMedia', 'SocialMedia', $this->owner->SocialMedia(), $gridFieldConfig);
         $fields->addFieldToTab('Root.SocialMedia', $gridfield);
     }
 
