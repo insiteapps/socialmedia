@@ -1,5 +1,10 @@
 <?php
 
+use SilverStripe\Forms\GridField\GridField;
+use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
+use SilverStripe\ORM\DataExtension;
+use SilverStripe\Forms\FieldList;
+
 /**
  * Class SocialMediaExtension
  */
