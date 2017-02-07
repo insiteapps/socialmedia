@@ -1,4 +1,4 @@
-SiteConfig:
+SilverStripe\SiteConfig\SiteConfig:
   extensions:
     - SocialMediaExtension
     - SocialMediaSiteConfigExtension

@@ -16,7 +16,6 @@ class SocialMediaPageExtension extends DataExtension
 class SocialMediaPageControllerExtension extends DataExtension
 {
 
-
     function getSocialMedia()
     {
         return $this->SocialMedia();

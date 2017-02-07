@@ -3,6 +3,12 @@
 /**
  * Class SocialMedia
  */
+
+use SilverStripe\SiteConfig\SiteConfig;
+use SilverStripe\ORM\DataObject;
+use SilverStripe\Forms\DropdownField;
+use SilverStripe\AssetAdmin\Forms\UploadField;
+
 class SocialMedia extends DataObject
 {
 
@@ -15,7 +21,7 @@ class SocialMedia extends DataObject
         "SortOrder" => "Int",
     );
     private static $has_one = array(
-        "SiteConfig" => "SiteConfig",
+        "SiteConfig" => "SilverStripe\\SiteConfig\\SiteConfig",
         "Page" => "Page",
         //"Icon" => "Image",
     );
@@ -28,12 +34,15 @@ class SocialMedia extends DataObject
             ->setSource(self::availableNames())
             ->setEmptyString("----"), "Link");
 
+        /*
         $icon = UploadField::create("Icon");
-        $icon->setAllowedFileCategories('image');
-        $icon->setAllowedMaxFileNumber(1);
+        $icon->setAllowedFileCategories('image/supported');
+        //$icon->setAllowedFileCategories('image');
+        //$icon->setAllowedMaxFileNumber(1);
         $icon->setFolderName('Uploads/SocialMedia/');
 
         //$f->addFieldToTab("Root.Icon", $icon);
+        */
 
         return $f;
     }
