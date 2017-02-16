@@ -33,7 +33,7 @@ class SocialMedia extends DataObject
         $icon->setAllowedMaxFileNumber(1);
         $icon->setFolderName('Uploads/SocialMedia/');
 
-        //$f->addFieldToTab("Root.Icon", $icon);
+        $f->addFieldToTab("Root.Icon", $icon);
 
         return $f;
     }
