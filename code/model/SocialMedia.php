@@ -17,7 +17,7 @@ class SocialMedia extends DataObject
     private static $has_one = array(
         "SiteConfig" => "SiteConfig",
         "Page" => "Page",
-        "Icon" => "FiitedImage",
+        "Icon" => "FittedImage",
     );
 
     public function getCMSFields()
