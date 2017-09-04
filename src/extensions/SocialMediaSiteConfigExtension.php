@@ -1,5 +1,6 @@
 <?php
 
+
 namespace InsiteApps\SocialMedia;
 
 use DataExtension;

@@ -3,12 +3,12 @@
 namespace InsiteApps\SocialMedia;
 
 use InsiteApps;
-use InsiteApps\Common;
+use InsiteApps\Common\Manager;
 
 /**
  * Class Manager
  */
-class Manager extends InsiteApps\Common\Manager
+class SocialMediaManager extends Manager
 {
 
     public static function include_code(&$aRequirements)

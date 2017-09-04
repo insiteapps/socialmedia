@@ -1,5 +1,6 @@
 <?php
 
+
 namespace InsiteApps\SocialMedia;
 
 use DataExtension;
@@ -14,7 +15,6 @@ class SocialMediaPageExtension extends DataExtension
 
 class SocialMediaPageControllerExtension extends DataExtension
 {
-    
     
     function getSocialMedia()
     {

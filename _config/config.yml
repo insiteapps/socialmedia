@@ -1,11 +1,4 @@
----
-Name: insite
-After:
-  - 'framework/*'
-  - 'cms/*'
----
-
-SiteConfig:
+SilverStripe\SiteConfig\SiteConfig:
   extensions:
     - InsiteApps\SocialMedia\SocialMediaExtension
     - InsiteApps\SocialMedia\SocialMediaSiteConfigExtension

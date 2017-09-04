@@ -1,10 +1,12 @@
 <?php
 
+
 namespace InsiteApps\SocialMedia;
 
 use DataObject;
 use DropdownField;
 use UploadField;
+
 
 class SocialMedia extends DataObject
 {
@@ -19,6 +21,7 @@ class SocialMedia extends DataObject
     );
     
     private static $has_one = array(
+        
         "SiteConfig" => "SiteConfig",
         "Page"       => "Page",
         "Icon"       => "FittedImage",
@@ -31,12 +34,11 @@ class SocialMedia extends DataObject
         $f->addFieldToTab("Root.Main", DropdownField::create("Name")
             ->setSource(self::availableNames())
             ->setEmptyString("----"), "Link");
-        
         $icon = UploadField::create("Icon");
-        $icon->setAllowedFileCategories('image');
-        $icon->setAllowedMaxFileNumber(1);
+        $icon->setAllowedFileCategories('image/supported');
+        //$icon->setAllowedFileCategories('image');
+        //$icon->setAllowedMaxFileNumber(1);
         $icon->setFolderName('Uploads/SocialMedia/');
-        
         $f->addFieldToTab("Root.Icon", $icon);
         
         return $f;
