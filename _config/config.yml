@@ -1,12 +1,12 @@
-SilverStripe\SiteConfig\SiteConfig:
+SiteConfig:
   extensions:
-    - InsiteApps\SocialMedia\SocialMediaExtension
-    - InsiteApps\SocialMedia\SocialMediaSiteConfigExtension
+    - InsiteApps\Social\SocialMediaExtension
+    - InsiteApps\Social\SocialMediaSiteConfigExtension
 
 Page:
   extensions:
-    - InsiteApps\SocialMedia\SocialMediaPageExtension
+    - InsiteApps\Social\SocialMediaPageExtension
 
 Page_Controller:
   extensions:
-    - InsiteApps\SocialMedia\SocialMediaPageControllerExtension
+    - InsiteApps\Social\SocialMediaPageControllerExtension

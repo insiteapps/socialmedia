@@ -1,13 +1,5 @@
 <?php
 
-
-//namespace InsiteApps\SocialMedia;
-
-use DataObject;
-use DropdownField;
-use UploadField;
-
-
 class SocialMedia extends DataObject
 {
     

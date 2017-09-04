@@ -1,6 +1,6 @@
 <?php
 
-namespace InsiteApps\SocialMedia;
+namespace InsiteApps\Social;
 
 use InsiteApps;
 use InsiteApps\Common\Manager;

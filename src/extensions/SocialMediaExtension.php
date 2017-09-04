@@ -1,7 +1,7 @@
 <?php
 
 
-namespace InsiteApps\SocialMedia;
+namespace InsiteApps\Social;
 
 use DataExtension;
 use GridFieldConfig_RecordEditor;
