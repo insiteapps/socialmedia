@@ -7,13 +7,13 @@ After:
 
 SiteConfig:
   extensions:
-    - SocialMediaExtension
-    - SocialMediaSiteConfigExtension
+    - InsiteApps\SocialMedia\SocialMediaExtension
+    - InsiteApps\SocialMedia\SocialMediaSiteConfigExtension
 
 Page:
   extensions:
-    - SocialMediaPageExtension
+    - InsiteApps\SocialMedia\SocialMediaPageExtension
 
 Page_Controller:
   extensions:
-    - SocialMediaPageControllerExtension
+    - InsiteApps\SocialMedia\SocialMediaPageControllerExtension

@@ -1,11 +1,12 @@
 <?php
 
-/**
- * Class SocialMediaSiteConfigExtension
- */
+namespace InsiteApps\SocialMedia;
+
+use DataExtension;
+
 class SocialMediaSiteConfigExtension extends DataExtension
 {
     private static $has_many = array(
-        "SocialMedia" => "SocialMedia",
+        "SocialMedia" => "InsiteApps\SocialMedia",
     );
 }
