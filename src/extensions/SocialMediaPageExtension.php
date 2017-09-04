@@ -4,7 +4,7 @@
 namespace InsiteApps\SocialMedia;
 
 use DataExtension;
-use SocialMedia;
+
 
 class SocialMediaPageExtension extends DataExtension
 {
@@ -29,7 +29,7 @@ class SocialMediaPageControllerExtension extends DataExtension
     
     function HeaderTopSocialMedia()
     {
-        return SocialMedia::get()->filter([
+        return \SocialMedia::get()->filter([
             "HeaderTop" => true,
         ]);
     }
