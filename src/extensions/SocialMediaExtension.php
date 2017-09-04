@@ -34,7 +34,7 @@ class SocialMediaExtension extends DataExtension
     {
         $filter = $type ? [$type => true] : [];
         
-        return SocialMedia::get()->filter($filter);
+        return \SocialMedia::get()->filter($filter);
     }
     
     

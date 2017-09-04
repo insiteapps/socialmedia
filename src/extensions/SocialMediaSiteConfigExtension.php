@@ -8,6 +8,6 @@ use DataExtension;
 class SocialMediaSiteConfigExtension extends DataExtension
 {
     private static $has_many = array(
-        "SocialMedia" => "InsiteApps\SocialMedia",
+        "SocialMedia" => "SocialMedia",
     );
 }

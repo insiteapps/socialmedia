@@ -1,7 +1,7 @@
 <?php
 
 
-namespace InsiteApps\SocialMedia;
+//namespace InsiteApps\SocialMedia;
 
 use DataObject;
 use DropdownField;
