@@ -27,9 +27,9 @@ class SocialMedia extends DataObject
             ->setSource(self::availableNames())
             ->setEmptyString("----"), "Link");
         $icon = UploadField::create("Icon");
-        $icon->setAllowedFileCategories('image/supported');
-        //$icon->setAllowedFileCategories('image');
-        //$icon->setAllowedMaxFileNumber(1);
+        //$icon->setAllowedFileCategories('image/supported');
+        $icon->setAllowedFileCategories('image');
+        $icon->setAllowedMaxFileNumber(1);
         $icon->setFolderName('Uploads/SocialMedia/');
         $f->addFieldToTab("Root.Icon", $icon);
         
