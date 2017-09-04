@@ -22,7 +22,7 @@ class SocialMediaPageControllerExtension extends DataExtension
 
     function SiteSocialMedia()
     {
-        return SocialMedia::get();
+        return $this->SocialMedia();
     }
 }
 

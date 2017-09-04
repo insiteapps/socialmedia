@@ -10,7 +10,7 @@ class SocialMedia extends DataObject
         "Name" => "Varchar(255)",
         //"FaIcon" => "Varchar(255)",
         "Link" => "Varchar(255)",
-        //"Header" => "Boolean",
+        "HeaderTop" => "Boolean",
         //"Footer" => "Boolean",
         "SortOrder" => "Int",
     );
