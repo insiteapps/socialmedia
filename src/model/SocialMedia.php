@@ -41,6 +41,7 @@ class SocialMedia extends DataObject
         $names = array(
             "Facebook",
             "Twitter",
+            'Instagram'
             "RSS",
             "Youtube",
             'Vimeo',
