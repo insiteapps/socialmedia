@@ -22,26 +22,27 @@ class SocialMedia extends DataObject
     public function getCMSFields()
     {
         $f = parent::getCMSFields();
-        $f->removeByName(array( 'SortOrder',
-                                'SiteConfigID',
-                                'PageID'
-        ));
-        $f->addFieldToTab( 'Root.Main', DropdownField::create( 'Name' )
-                                                     ->setSource(self::availableNames())
+        $f->removeByName( [
+            'HeaderTop',
+            'SortOrder',
+            'SiteConfigID',
+            'PageID',
+        ] );
+        $f->addFieldToTab( 'Root.Main', DropdownField::create( 'Name' )->setSource( self::availableNames() )
                                                      ->setEmptyString( '----' ), 'Link' );
         $icon = UploadField::create( 'Icon' );
         //$icon->setAllowedFileCategories('image/supported');
-        $icon->setAllowedFileCategories('image');
-        $icon->setAllowedMaxFileNumber(1);
-        $icon->setFolderName('Uploads/SocialMedia/');
-        $f->addFieldToTab( 'Root.Icon', $icon);
+        $icon->setAllowedFileCategories( 'image' );
+        $icon->setAllowedMaxFileNumber( 1 );
+        $icon->setFolderName( 'Uploads/SocialMedia/' );
+        $f->addFieldToTab( 'Root.Icon', $icon );
 
         return $f;
     }
 
     function availableNames()
     {
-        $names = array(
+        $names  = array(
             'Facebook',
             'Twitter',
             'Instagram',
@@ -57,10 +58,10 @@ class SocialMedia extends DataObject
         );
         $aNames = [];
         /**/
-        $usedNames = [];//SocialMedia::get()->column("Name");
-        $field_names = array_diff($names, $usedNames);
-        $aNames = array_combine(array_values($field_names), array_values($field_names));
-        if ($this->ID) {
+        $usedNames   = [];//SocialMedia::get()->column("Name");
+        $field_names = array_diff( $names, $usedNames );
+        $aNames      = array_combine( array_values( $field_names ), array_values( $field_names ) );
+        if ( $this->ID ) {
             $aNames[ $this->Name ] = $this->Name;
         }
 
@@ -77,7 +78,7 @@ class SocialMedia extends DataObject
     {
         parent::onBeforeWrite();
         $url = $this->Link;
-        if ($url) {
+        if ( $url ) {
             if ( stripos( $url, 'https://' ) !== 0 && stripos( $url, 'http://' ) !== 0 ) {
                 $url = 'http://' . $url;
             }
