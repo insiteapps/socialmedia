@@ -82,7 +82,7 @@ class SocialMedia extends DataObject
         parent::onBeforeWrite();
         $url = $this->Link;
         if ( $url ) {
-            if ( stripos( $url, 'https://' ) !== 0 && stripos( $url, 'http://' ) !== 0 ) {
+            if ( ( stripos( $url, 'mailto:' ) === false ) && stripos( $url, 'https://' ) !== 0 && stripos( $url, 'http://' ) !== 0 ) {
                 $url = 'http://' . $url;
             }
             $this->Link = $url;
