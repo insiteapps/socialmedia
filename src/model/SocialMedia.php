@@ -2,53 +2,56 @@
 
 class SocialMedia extends DataObject
 {
-    
+
     private static $db = array(
-        "Name"      => "Varchar(255)",
+        'Name'      => 'Varchar(255)',
         //"FaIcon" => "Varchar(255)",
-        "Link"      => "Varchar(255)",
-        "HeaderTop" => "Boolean",
+        'Link'      => 'Varchar(255)',
+        'HeaderTop' => 'Boolean',
         //"Footer" => "Boolean",
-        "SortOrder" => "Int",
+        'SortOrder' => 'Int',
     );
-    
+
     private static $has_one = array(
-        
+
         "SiteConfig" => "SiteConfig",
         "Page"       => "Page",
         "Icon"       => "FittedImage",
     );
-    
+
     public function getCMSFields()
     {
         $f = parent::getCMSFields();
-        $f->removeByName(array("SortOrder", "SiteConfigID", "PageID"));
-        $f->addFieldToTab("Root.Main", DropdownField::create("Name")
-            ->setSource(self::availableNames())
-            ->setEmptyString("----"), "Link");
-        $icon = UploadField::create("Icon");
+        $f->removeByName(array( 'SortOrder',
+                                'SiteConfigID',
+                                'PageID'
+        ));
+        $f->addFieldToTab( 'Root.Main', DropdownField::create( 'Name' )
+                                                     ->setSource(self::availableNames())
+                                                     ->setEmptyString( '----' ), 'Link' );
+        $icon = UploadField::create( 'Icon' );
         //$icon->setAllowedFileCategories('image/supported');
         $icon->setAllowedFileCategories('image');
         $icon->setAllowedMaxFileNumber(1);
         $icon->setFolderName('Uploads/SocialMedia/');
-        $f->addFieldToTab("Root.Icon", $icon);
-        
+        $f->addFieldToTab( 'Root.Icon', $icon);
+
         return $f;
     }
-    
+
     function availableNames()
     {
         $names = array(
-            "Facebook",
-            "Twitter",
+            'Facebook',
+            'Twitter',
             'Instagram',
-            "RSS",
-            "Youtube",
+            'RSS',
+            'Youtube',
             'Vimeo',
-            "LinkedIn",
-            "Flickr",
-            "Google-Plus",
-            "TripAdvisor",
+            'LinkedIn',
+            'Flickr',
+            'Google-Plus',
+            'TripAdvisor',
             'Pinterest',
             'Flickr',
         );
@@ -60,26 +63,26 @@ class SocialMedia extends DataObject
         if ($this->ID) {
             $aNames[ $this->Name ] = $this->Name;
         }
-        
+
         return $aNames;
     }
-    
+
     private static $summary_fields = array(
         'Name',
         'Link',
-    
+
     );
-    
+
     function onBeforeWrite()
     {
         parent::onBeforeWrite();
         $url = $this->Link;
         if ($url) {
-            if (strtolower(substr($url, 0, 8)) != 'https://' && strtolower(substr($url, 0, 7)) != 'http://') {
+            if ( stripos( $url, 'https://' ) !== 0 && stripos( $url, 'http://' ) !== 0 ) {
                 $url = 'http://' . $url;
             }
             $this->Link = $url;
         }
     }
-    
+
 }

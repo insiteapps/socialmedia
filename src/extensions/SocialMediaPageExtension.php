@@ -4,35 +4,35 @@
 namespace InsiteApps\Social;
 
 use DataExtension;
-
+use SocialMedia;
 
 class SocialMediaPageExtension extends DataExtension
 {
-    
+
     private static $has_many = array(
-        "SocialMedia" => "SocialMedia",
+        'SocialMedia' => 'SocialMedia',
     );
 }
 
 class SocialMediaPageControllerExtension extends DataExtension
 {
-    
-    function getSocialMedia()
+
+    public function getSocialMedia()
     {
         return $this->SocialMedia();
     }
-    
-    function SiteSocialMedia()
+
+    public function SiteSocialMedia()
     {
         return $this->SocialMedia();
     }
-    
-    function HeaderTopSocialMedia()
+
+    public function HeaderTopSocialMedia()
     {
-        return \SocialMedia::get()->filter([
-            "HeaderTop" => true,
-        ]);
+        return SocialMedia::get()->filter( [
+            'HeaderTop' => true,
+        ] );
     }
-    
+
 }
 
